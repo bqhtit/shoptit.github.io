@@ -2,13 +2,13 @@
   $avatar = "";
   
     # Import Hệ thống
-    require_once('TMQ/function.php');
+    require_once('TIT/function.php');
     if (@$uid){
         header('Location: /');
     }
     
     $headtitle = 'Đăng ký tài khoản mới';
-    require_once('TMQ/head.php');
+    require_once('TIT/head.php');
     ?>
     <?php
     $error = "";
@@ -20,8 +20,8 @@ if(isset($_POST['dangky'])){
   $password = tmq_boc($_POST['password']);
   $password2 = tmq_boc($_POST['password_confirmation']);
  
-  $check_user = $db->query("SELECT COUNT(*) FROM `TMQ_user` WHERE `uid` = '$username' LIMIT 1")->fetchColumn();
-  $check_mail = $db->query("SELECT COUNT(*) FROM `TMQ_user` WHERE `email` = '$email' LIMIT 1")->fetchColumn();
+  $check_user = $db->query("SELECT COUNT(*) FROM `TIT_user` WHERE `uid` = '$username' LIMIT 1")->fetchColumn();
+  $check_mail = $db->query("SELECT COUNT(*) FROM `TIT_user` WHERE `email` = '$email' LIMIT 1")->fetchColumn();
 
 if(empty($name) || empty($username) || empty($email) || empty($password) || empty($password2)){
     $error = 'Vui lòng nhập đủ thông tin.';
@@ -31,7 +31,7 @@ if(empty($name) || empty($username) || empty($email) || empty($password) || empt
     $error = 'Tài khoản hoặc email đã tồn tại trên hệ thống';
 }else{
         //thêm vào data
-        $db->exec("INSERT INTO TMQ_user (uid,name,email,matkhau,admin,cash,date,avatar,ban,hinhthuc_ad,vang) VALUES ('".$username."','".$name."','".$email."','".md5($password)."','0','0','".date('d-m-Y')."','".$avatar."','0','0','0')");
+        $db->exec("INSERT INTO TIT_user (uid,name,email,matkhau,admin,cash,date,avatar,ban,hinhthuc_ad,vang) VALUES ('".$username."','".$name."','".$email."','".md5($password)."','0','0','".date('d-m-Y')."','".$avatar."','0','0','0')");
         $error = 'Đăng ký thành công !';
 }
     
@@ -115,6 +115,6 @@ if(empty($name) || empty($username) || empty($email) || empty($password) || empt
     
     
     <?php
-    require_once('TMQ/end.php');
+    require_once('TIT/end.php');
 
 ?>

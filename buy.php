@@ -1,15 +1,10 @@
 <?php
-/////////////////////////////////////////////////
-/// code được thực hiện bởi Trần Minh Quang   ///
-/// vui lòng không xóa dòng này               ///
-/// cảm ơn các bạn đã sử dụng bộ code nàyy    ///
-/////////////////////////////////////////////////
 ?>
-<?php require_once('TMQ/function.php'); ?>
+<?php require_once('TIT/function.php'); ?>
 <?php 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : NULL  ;
-$dulieu = $db->query("SELECT * FROM `TMQ_baiviet` WHERE `id` = '$id'")->fetch();
-$cm = $db->query("SELECT * FROM `TMQ_chuyenmuc` WHERE `id` = '". $dulieu['loainick'] ."'")->fetch();
+$dulieu = $db->query("SELECT * FROM `TIT_baiviet` WHERE `id` = '$id'")->fetch();
+$cm = $db->query("SELECT * FROM `TIT_chuyenmuc` WHERE `id` = '". $dulieu['loainick'] ."'")->fetch();
 $thumb = explode(PHP_EOL,$dulieu['img']);
 ?>
 <script>
@@ -151,7 +146,7 @@ $("#send_odp").on("click", function(){
                       <label class="col-md-3 form-control-label">ODP :</label>
                         <div class="col-md-6">
                             <div class="input-group">
-                                   <input type="hidden" name="email" id="email" value="<?=$TMQ['email'];?>">
+                                   <input type="hidden" name="email" id="email" value="<?=$TIT['email'];?>">
                                 <input type="text" class="form-control c-square" id="code" name="code" placeholder="" maxlength="4" autocomplete="off" required="">
                                  <span class="input-group-addon" style="padding: 0px;">
                                      

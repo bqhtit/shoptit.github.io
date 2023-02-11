@@ -1,12 +1,12 @@
 <?php
     # Import Hệ thống
   
-    require_once('TMQ/function.php');
+    require_once('TIT/function.php');
     if (!empty($uid)){
         header('Location: /');
     }
     $headtitle = 'Đăng nhập vào hệ thống';
-    require_once('TMQ/head.php');
+    require_once('TIT/head.php');
 $error = "";
 if($_POST){
   if(!empty($_POST['username']) && !empty($_POST['password'])){  
@@ -16,7 +16,7 @@ if($_POST){
 
   if(strlen($password) > 5 && strlen($username)){
     $password = md5($password);
-    if($db->query("SELECT COUNT(*) FROM `TMQ_user` WHERE `uid` = '$username' AND `matkhau` = '$password' LIMIT 1")->fetchColumn() != 0){
+    if($db->query("SELECT COUNT(*) FROM `TIT_user` WHERE `uid` = '$username' AND `matkhau` = '$password' LIMIT 1")->fetchColumn() != 0){
         $_SESSION['uid'] = $username;
         echo'<meta http-equiv="refresh" content="3;url=/">
         <script type="text/javascript">
@@ -111,6 +111,6 @@ if($_POST){
 			<!-- END: PAGE CONTENT -->
 </div>
 <?php
-    require_once('TMQ/end.php');
+    require_once('TIT/end.php');
 
 ?>

@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `TMQ_baiviet`
+-- Cấu trúc bảng cho bảng `TIT_baiviet`
 --
 
-CREATE TABLE `TMQ_baiviet` (
+CREATE TABLE `TIT_baiviet` (
   `id` bigint(20) NOT NULL,
   `uid` text,
   `taikhoan` text CHARACTER SET utf8,
@@ -51,10 +51,10 @@ CREATE TABLE `TMQ_baiviet` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `TMQ_bank`
+-- Cấu trúc bảng cho bảng `TIT_bank`
 --
 
-CREATE TABLE `TMQ_bank` (
+CREATE TABLE `TIT_bank` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `uid` text CHARACTER SET utf8,
   `bank` text CHARACTER SET utf8,
@@ -67,10 +67,10 @@ CREATE TABLE `TMQ_bank` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `TMQ_banner`
+-- Cấu trúc bảng cho bảng `TIT_banner`
 --
 
-CREATE TABLE `TMQ_banner` (
+CREATE TABLE `TIT_banner` (
   `id` bigint(20) NOT NULL,
   `image` text CHARACTER SET utf8,
   `url` text CHARACTER SET utf8,
@@ -80,10 +80,10 @@ CREATE TABLE `TMQ_banner` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `TMQ_biendoi`
+-- Cấu trúc bảng cho bảng `TIT_biendoi`
 --
 
-CREATE TABLE `TMQ_biendoi` (
+CREATE TABLE `TIT_biendoi` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `uid` text CHARACTER SET utf8 NOT NULL,
   `noidung` text CHARACTER SET utf32 NOT NULL,
@@ -96,10 +96,10 @@ CREATE TABLE `TMQ_biendoi` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `TMQ_chuyenmuc`
+-- Cấu trúc bảng cho bảng `TIT_chuyenmuc`
 --
 
-CREATE TABLE `TMQ_chuyenmuc` (
+CREATE TABLE `TIT_chuyenmuc` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `ten` text CHARACTER SET utf8 NOT NULL,
   `trangthai` varchar(100) NOT NULL,
@@ -116,10 +116,10 @@ CREATE TABLE `TMQ_chuyenmuc` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `TMQ_chuyentien`
+-- Cấu trúc bảng cho bảng `TIT_chuyentien`
 --
 
-CREATE TABLE `TMQ_chuyentien` (
+CREATE TABLE `TIT_chuyentien` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `uid_chuyen` text NOT NULL,
   `uid_nhan` text NOT NULL,
@@ -131,10 +131,10 @@ CREATE TABLE `TMQ_chuyentien` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `TMQ_giftcode`
+-- Cấu trúc bảng cho bảng `TIT_giftcode`
 --
 
-CREATE TABLE `TMQ_giftcode` (
+CREATE TABLE `TIT_giftcode` (
   `id` int(10) UNSIGNED NOT NULL,
   `uid` text CHARACTER SET utf8 NOT NULL,
   `name` text CHARACTER SET utf8 NOT NULL,
@@ -147,10 +147,10 @@ CREATE TABLE `TMQ_giftcode` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `TMQ_inbox`
+-- Cấu trúc bảng cho bảng `TIT_inbox`
 --
 
-CREATE TABLE `TMQ_inbox` (
+CREATE TABLE `TIT_inbox` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `uid_gui` text CHARACTER SET utf8 NOT NULL,
   `uid` text CHARACTER SET utf8 NOT NULL,

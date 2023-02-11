@@ -5,11 +5,11 @@
 /// cảm ơn các bạn đã sử dụng bộ code nàyy    ///
 /////////////////////////////////////////////////
 ?>
-<?php require_once('TMQ/function.php'); ?>
-<?php require_once('TMQ/head.php');
+<?php require_once('TIT/function.php'); ?>
+<?php require_once('TIT/head.php');
 $id = isset($_GET['id']) ? (int)$_GET['id'] : NULL;
-$get = $db->query("SELECT * FROM `TMQ_chuyenmuc` WHERE `id` = '$id'")->fetch();
-$acc = $db->query("SELECT * FROM `TMQ_baiviet` WHERE `loainick` = '$id'")->rowCount();
+$get = $db->query("SELECT * FROM `TIT_chuyenmuc` WHERE `id` = '$id'")->fetch();
+$acc = $db->query("SELECT * FROM `TIT_baiviet` WHERE `loainick` = '$id'")->rowCount();
 if($get['trangthai'] == 'off'){
     die('Chuyên mục game đã bị tắt bởi ADMIN. Vui lòng quay lại sau');
 }
@@ -244,9 +244,9 @@ if( isset($_GET["page"]) ){
 }
 $from = ($trang -1 ) * $sotin1trang;
 if(isset($_POST['timkiem'])){
-$get_bv = $db->query("SELECT * FROM `TMQ_baiviet` WHERE `trangthai` = '1' AND `loainick` = '$id' $giamin $giamax $timid $count_1 $count_2 $count_3 $count_4 $xep LIMIT $from,$sotin1trang"); //lấy danh sách bài viết theo chuyên mục
+$get_bv = $db->query("SELECT * FROM `TIT_baiviet` WHERE `trangthai` = '1' AND `loainick` = '$id' $giamin $giamax $timid $count_1 $count_2 $count_3 $count_4 $xep LIMIT $from,$sotin1trang"); //lấy danh sách bài viết theo chuyên mục
 }else{
-$get_bv = $db->query("SELECT * FROM `TMQ_baiviet` WHERE `trangthai` = '1' AND `loainick` = '$id' LIMIT $from,$sotin1trang"); //lấy danh sách bài viết theo chuyên mục
+$get_bv = $db->query("SELECT * FROM `TIT_baiviet` WHERE `trangthai` = '1' AND `loainick` = '$id' LIMIT $from,$sotin1trang"); //lấy danh sách bài viết theo chuyên mục
 }
 foreach($get_bv as $bv){
 //$get_img = $db->query("SELECT * FROM `images` WHERE `id_acc` = '".$bv['id']."'")->fetch();
@@ -303,7 +303,7 @@ $thumb = explode(PHP_EOL,$bv['img']);
 </div>
 <div class="col-md-12"> 
 <?php 
-$tong = $db->query("SELECT * FROM `TMQ_baiviet` WHERE `loainick` = '$id' AND `trangthai` = 1")->rowcount();
+$tong = $db->query("SELECT * FROM `TIT_baiviet` WHERE `loainick` = '$id' AND `trangthai` = 1")->rowcount();
 $link = ''.xoa_dau($get['ten']).'-'.$id.'-';
 if ($tong > $sotin1trang){
 echo '<center>' . phantrang($link, $from, $tong, $sotin1trang) . '</center>';
@@ -312,4 +312,4 @@ echo '<center>' . phantrang($link, $from, $tong, $sotin1trang) . '</center>';
 		</div>
 	</div>
 	<?php
-require_once('TMQ/end.php');
+require_once('TIT/end.php');
